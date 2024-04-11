@@ -1,20 +1,28 @@
 package com.proyecto.model;
 
 public class GuitarraElectrica extends Guitarra {
+	
 	private double potencia;
+	
+	public GuitarraElectrica(String nombreInstrumento, String tipo, int numeroCuerdaas, double potencia) {
+		super(nombreInstrumento, tipo, numeroCuerdaas);
+		this.potencia = potencia;
+	}
 	
 	@Override
 	public String tocar() {
 		return "Tocando la guitarra eléctrica";
 	}
 
-	public double getPotencia() {
-		return potencia;
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder(super.toString());
+		builder.append("\tPotencia: ");
+		builder.append(potencia);
+		return builder.toString();
 	}
 
-	public void setPotencia(double potencia) {
-		this.potencia = potencia;
-	}
+	
 	
 	
 }

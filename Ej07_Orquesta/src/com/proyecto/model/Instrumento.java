@@ -1,21 +1,23 @@
 package com.proyecto.model;
 
-abstract class Instrumento{
+public abstract class Instrumento{
 	protected String nombreInstrumento;
 	protected String tipo;
 	
+	public Instrumento(String nombreInstrumento, String tipo) {
+		this.nombreInstrumento = nombreInstrumento;
+		this.tipo = tipo;
+	}
+	
 	public String tocar() {
-		return "Tocando el instrumento" + nombreInstrumento;
+		return "Tocando el instrumento " + nombreInstrumento;
 
 	}
 	
 	public String afinar() {
-		return "Afinando el instrumento" + nombreInstrumento;
+		return "Afinando el instrumento " + nombreInstrumento;
 	}
 	
-	public String aporrear() {
-		return "Aporreando tambor" + nombreInstrumento;
-	}
 	
 	public String getNombreInstrumento() {
 		return nombreInstrumento;
@@ -32,7 +34,18 @@ abstract class Instrumento{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder("Instrumento : " + this.getClass().getSimpleName());
 		
+		builder.append("\tNombre: ");
+		builder.append(nombreInstrumento);
+		builder.append("\tTipo: ");
+		builder.append(tipo);
+		return builder.toString();
+	}
+	
+	
 	
 }

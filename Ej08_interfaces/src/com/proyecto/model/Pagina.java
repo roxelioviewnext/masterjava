@@ -7,7 +7,6 @@ public class Pagina implements Imprimible{
 	private int nLineas;
 	
 	
-	
 	public Pagina(int nPaginas, int nLineas) {
 		super();
 		this.nPaginas = nPaginas;
