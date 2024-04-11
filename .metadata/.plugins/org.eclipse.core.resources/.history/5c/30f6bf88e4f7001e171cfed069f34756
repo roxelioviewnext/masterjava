@@ -1,0 +1,38 @@
+package com.cuenta.application;
+
+import java.util.Scanner;
+
+import com.cuenta.banco.Cuenta;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Double cantidad = 200;
+		String titular = "Pedro";
+		Cuenta nuevaCuenta;
+
+		nuevaCuenta = new Cuenta(titular, 100);
+
+
+		do {
+			try {
+				System.out.println("Por favor, introduce la cantidad");
+				cantidad = scan.nextDouble();
+			} catch (Exception e) {
+				System.out.println("No has introducido la cantidad correctamente");
+				cantidad = scan.nextDouble();
+			}
+		} while (cantidad == null);
+
+		switch (opcion) {
+		case 1 -> {
+			nuevaCuenta.ingresar(cantidad);
+			System.out.println("Cantidad final de tras el ingreso de saldo:" + nuevaCuenta.getCantidad());
+		}
+		case 2 -> {
+			nuevaCuenta.retirar(cantidad);
+			System.out.println("Cantidad final de tras la retirada de saldo:" + nuevaCuenta.getCantidad());
+		}
+		}
+	}
+}

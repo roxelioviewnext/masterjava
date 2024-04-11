@@ -5,49 +5,20 @@ import java.util.Scanner;
 import com.cuenta.banco.Cuenta;
 
 public class Main {
-	private static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Double cantidad = null;
-		int opcion = 0;
-		String titular;
+		Double cantidad = 200.00;
 		Cuenta nuevaCuenta;
-		System.out.println("Introduce el nombre dil titular");
-		do {
-			titular = scan.nextLine();
-		} while (!titular.isBlank());
-		nuevaCuenta = new Cuenta(titular, 100);
-		
-		do {
-			try {
-				System.out.println("1- Ingresar");
-				System.out.println("2- Retirar");
-				System.out.println("Por favor, introduce la opcion");
-				opcion = scan.nextInt();
-			} catch (Exception e) {
-				System.out.println("No has introducido la opcion correctamente");
-			}
-		} while (opcion < 1 || opcion > 2);
 
-		do {
-			try {
-				System.out.println("Por favor, introduce la cantidad");
-				cantidad = scan.nextDouble();
-			} catch (Exception e) {
-				System.out.println("No has introducido la cantidad correctamente");
-				cantidad = scan.nextDouble();
-			}
-		} while (cantidad == null);
+		nuevaCuenta = new Cuenta("Pedro", 100);
 
-		switch (opcion) {
-		case 1 -> {
+			cantidad = 200.00;
 			nuevaCuenta.ingresar(cantidad);
 			System.out.println("Cantidad final de tras el ingreso de saldo:" + nuevaCuenta.getCantidad());
-		}
-		case 2 -> {
+			
+			cantidad = 50.00;
 			nuevaCuenta.retirar(cantidad);
 			System.out.println("Cantidad final de tras la retirada de saldo:" + nuevaCuenta.getCantidad());
-		}
-		}
+
 	}
 }

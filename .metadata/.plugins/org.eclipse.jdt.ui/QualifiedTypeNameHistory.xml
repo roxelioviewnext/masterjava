@@ -25,8 +25,11 @@
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="com.ejercicio.utils.EstadoPartido"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.ejercicio.liga.Equipo"/>
+    <fullyQualifiedTypeName name="com.tienda.almacen.Ordenador"/>
+    <fullyQualifiedTypeName name="com.tienda.almacen.Telefono"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
 </qualifiedTypeNameHistroy>
