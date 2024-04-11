@@ -1,0 +1,124 @@
+package com.ejercicio.liga;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Equipo implements Comparable<Equipo>{
+	private String nombre;
+	private String estadio;
+	private int partidosGanados;
+	private int partidosPerdidos;
+	private int partidosEmpatados;
+	private int puntos;
+	
+	private Map <Jugador, Integer> goles;
+
+	public Equipo(String nombre, String estadio) {
+		super();
+		this.nombre = nombre;
+		this.estadio = estadio;
+		this.partidosGanados = 0;
+		this.partidosPerdidos = 0;
+		this.partidosEmpatados = 0;
+		this.puntos = 0;
+		this.goles = new HashMap<Jugador, Integer>();
+	}
+	public int getTotalGoles() {
+		int ret = 0;
+			for (Entry<Jugador, Integer> entry : goles.entrySet()) {
+				ret+= entry.getValue();
+			}
+		return ret;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getEstadio() {
+		return estadio;
+	}
+
+	public void setEstadio(String estadio) {
+		this.estadio = estadio;
+	}
+
+	public int getPartidosGanados() {
+		return partidosGanados;
+	}
+
+	public void setPartidosGanados(int partidosGanados) {
+		this.partidosGanados = partidosGanados;
+	}
+
+	public int getPartidosPerdidos() {
+		return partidosPerdidos;
+	}
+
+	public void setPartidosPerdidos(int partidosPerdidos) {
+		this.partidosPerdidos = partidosPerdidos;
+	}
+
+	public int getPartidosEmpatados() {
+		return partidosEmpatados;
+	}
+
+	public void setPartidosEmpatados(int partidosEmpatados) {
+		this.partidosEmpatados = partidosEmpatados;
+	}
+
+	public int getPuntos() {
+		return puntos;
+	}
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
+
+	public Map<Jugador, Integer> getGoles() {
+		return goles;
+	}
+
+	public void setGoles(Map<Jugador, Integer> goles) {
+		this.goles = goles;
+	}
+	
+	@Override
+	public int compareTo(Equipo p2) {
+		int ret;
+		
+		if(this.getPuntos() > p2.getPuntos() ) {
+			return 1;
+			
+		}else if ( this.getPuntos() == p2.getPuntos() && this.getPartidosGanados() > p2.getPartidosGanados() )  {
+			return 1;
+			
+		}else ret = 0;
+		
+		return ret;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(nombre + "\t")
+		.append("| " + partidosGanados +" | ")
+		.append("| " + partidosEmpatados + " | ")
+		.append("| " + partidosPerdidos + " | ")
+		.append("| " + puntos + " | ")
+		.append("| " + getTotalGoles() + " | " + "\n");
+		
+		return builder.toString();
+	}
+	
+	
+	
+	
+	
+}

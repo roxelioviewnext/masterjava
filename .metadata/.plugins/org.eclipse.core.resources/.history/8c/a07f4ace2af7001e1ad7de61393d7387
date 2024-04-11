@@ -1,0 +1,133 @@
+package com.ejercicio.main;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Scanner;
+
+import com.ejercicio.liga.Clasificacion;
+import com.ejercicio.liga.Equipo;
+import com.ejercicio.liga.Jugador;
+import com.ejercicio.liga.Partido;
+import com.ejercicio.utils.Posicion;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Clasificacion liga = new Clasificacion("LA LIGA");
+		agregarDatosEjemplo(liga);
+
+		int opcion;
+		String equipo;
+		mostrarOpcionesUsuario();
+		opcion = leeOpcion();
+		do {
+			switch (opcion) {
+			case 1 -> {
+				System.out.println("HAS ENTRADO EN MODO ESPECTADOR");
+				mostrarOpcionesEspectador();
+				opcion = leeOpcion();
+				while (opcion > 0 && opcion < 5) {
+					switch (opcion) {
+					case 1 -> liga.mostrarJugadoresPorGol();
+					case 2 -> {
+						System.out.println("Introduce el nombre del equipo de los jugadores que quieres ver");
+						liga.mostrarNombreEquipos();;
+						equipo = scan.nextLine();
+						liga.mostrarJugadoresPorGol(equipo);
+					}
+					case 3 -> liga.mostrarTablaClasificacion();
+					case 4 -> liga.mostrarTablaJornadas();
+					}
+					if ((opcion > 0 && opcion < 5)) {
+						mostrarOpcionesEspectador();
+						opcion = leeOpcion();
+					}
+					liga.actualizarDatos();
+				}
+			}
+			case 2 -> {
+				System.out.println("HAS ENTRADO EN MODO ADMINISTRADOR");
+				opcion = leeOpcion();
+			}
+			default -> {
+				System.exit(-1);
+				System.out.println("Has salido del programa");
+			}
+			}
+			if (opcion > 0 && opcion < 2) {
+				mostrarOpcionesUsuario();
+				opcion = leeOpcion();
+			}
+		} while (opcion > 0 && opcion < 2);
+
+	}
+
+	/*
+	 * Lee la proxima linea insertada por consola, si la linea es un numero devuelve
+	 * ese numero, sino salta un error
+	 */
+	private static int leeOpcion() {
+		int ret = -1;
+		try {
+			System.out.println("Introduce tu opcion porfavor");
+			ret = Integer.parseInt(scan.nextLine());
+		} catch (Exception e) {
+			System.out.println("Saliendo del programa");
+		}
+		return ret;
+
+	}
+
+	private static void mostrarOpcionesUsuario() {
+		System.out.println("1 - MODO ESPECTADOR");
+		System.out.println("2 - MODO ADMINISTRADOR");
+	}
+
+	private static void mostrarOpcionesEspectador() {
+		System.out.println("1 - MOSTRAR JUGADORES DE TODOS LOS EQUIPOS POR GOL");
+		System.out.println("2 - MOSTRAR JUGADORES DE UN EQUIPO POR GOL");
+		System.out.println("3 - MOSTRAR CLASIFICACION");
+		System.out.println("4 - MOSTAR CALENDARIO DE JORNADAS");
+	}
+
+	/*
+	 * Metodo para poner ejemplos de prueba
+	 */
+	private static void agregarDatosEjemplo(Clasificacion liga) {
+		Jugador pepe = new Jugador("Pepe", 20, Posicion.PORTERO, 13, 1);
+		Jugador lucas = new Jugador("Lucas", 24, Posicion.CENTRAL, 5, 9);
+		Jugador jorge = new Jugador("Jorge", 20, Posicion.DELANTERO, 20, 15);
+		Jugador raul = new Jugador("Raul", 20, Posicion.PORTERO, 13, 0);
+		Jugador pablo = new Jugador("Pablo", 24, Posicion.CENTRAL, 5, 4);
+		Jugador roi = new Jugador("Roi", 20, Posicion.DELANTERO, 20, 16);
+		Jugador lune = new Jugador("Lune", 20, Posicion.PORTERO, 13, 0);
+		Jugador xoel = new Jugador("Xoel", 24, Posicion.CENTRAL, 5, 5);
+		Jugador martin = new Jugador("Martin", 20, Posicion.DELANTERO, 20, 19);
+
+		Equipo mallorca = new Equipo("Mallorca", "Madrid ST");
+		Equipo madrid = new Equipo("Madrid", "Madrid ST");
+		Equipo celta = new Equipo("Celta", "Madrid ST");
+
+		celta.ficharJugador(pepe);
+		celta.ficharJugador(lucas);
+		celta.ficharJugador(jorge);
+		madrid.ficharJugador(raul);
+		madrid.ficharJugador(pablo);
+		madrid.ficharJugador(roi);
+		mallorca.ficharJugador(xoel);
+		mallorca.ficharJugador(lune);
+		mallorca.ficharJugador(martin);
+
+		liga.agregarEquipos(celta);
+		liga.agregarEquipos(madrid);
+		liga.agregarEquipos(mallorca);
+		
+		
+		liga.agregarTodosPartidos();
+		
+		
+	}
+	
+	
+}

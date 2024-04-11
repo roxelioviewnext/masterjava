@@ -1,0 +1,11 @@
+package com.tienda.application;
+
+import com.tienda.almacen.Ordenador;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Ordenador equipo1 = new Ordenador("Lenovo", 800.00, 32, "Intel i5-14600k", 16, 500);
+		Ordenador equipo1 = new Ordenador("Iphone 8", 800.00, 32, , 16, 500);
+	}
+}

@@ -1,0 +1,12 @@
+package com.ejercicio.liga;
+
+public enum EstadoPartido {
+	NO_JUGADO("no jugado"),
+	JUGADO("jugado"),
+	EN_CURSO("en curso");
+	
+	EstadoPartido(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

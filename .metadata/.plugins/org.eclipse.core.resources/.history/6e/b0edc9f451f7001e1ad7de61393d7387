@@ -1,0 +1,24 @@
+package com.cafetera.application;
+
+
+import com.cafetera.cafeteria.Cafetera;
+
+public class Main {
+	public static void main(String[] args) {
+		Cafetera cafetera = new Cafetera();
+		cafetera.toString();
+		
+		cafetera.agregarCafe(200);
+		cafetera.toString();
+		
+		cafetera.servirTaza(50);
+		cafetera.toString();
+		
+		cafetera.llenarCafetera();
+		cafetera.toString();
+		
+		cafetera.vaciarCafetera();
+		cafetera.toString();
+		
+	}
+}

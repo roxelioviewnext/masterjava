@@ -1,0 +1,9 @@
+package com.ejercicio.liga;
+
+public enum EstadoPartido {
+	NO_JUGADO("no jugado"),
+	JUGADO,
+	EN_CURSO;
+	
+	private String color;
+}

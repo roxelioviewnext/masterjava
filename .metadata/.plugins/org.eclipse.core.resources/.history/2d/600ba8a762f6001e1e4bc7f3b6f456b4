@@ -1,0 +1,30 @@
+package com.sinensia.biblioteca;
+
+import com.sinensia.libro.Libro;
+
+public class Main {
+		public static void main(String[] args) {
+			Libro manzana = new Libro();
+			manzana.setAutor("Pedro");
+			manzana.setTitulo("Muchas manzanas");
+			manzana.setNumPaginas(200);
+			manzana.setIsbn("000-ABC-146");
+			
+			Libro libro2 = new Libro(); 
+			libro2.setAutor("Maria");
+			manzana.setTitulo("Coches verdes");
+			libro2.setNumPaginas(140);
+			libro2.setIsbn("000-ABC-146");
+			
+			String mostrarPantalla;
+			if(manzana.getNumPaginas() > libro2.getNumPaginas()) {
+				mostrarPantalla = (manzana.getTitulo() + "de: "+  manzana.getAutor() + "AAA tiene mas paginas");
+						;
+			}else if (manzana.getNumPaginas() < libro2.getNumPaginas()) {
+				mostrarPantalla = libro2.getTitulo() + "de: "+ libro2.getAutor() + "BBB tiene mas paginas";
+				
+			} else mostrarPantalla = "Ambos libros tienen las mismas paginas"; 
+			
+			System.out.println(mostrarPantalla);
+		}
+}

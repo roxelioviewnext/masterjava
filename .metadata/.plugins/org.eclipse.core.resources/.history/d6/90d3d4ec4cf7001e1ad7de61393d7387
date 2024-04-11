@@ -1,0 +1,7 @@
+package com.cafetera.cafeteria;
+
+public class Cafetera {
+	private int capacidadMaxima;
+	private int capacidadActual;
+	
+}

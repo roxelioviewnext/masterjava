@@ -1,0 +1,102 @@
+package com.ejercicio.liga;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
+
+public class Clasificacion {
+	private String nombre;
+	
+	private List<Equipo> participantes;
+
+	private List<Jugador> jugadores;
+	
+	private List<Partido> jornadas;
+	
+	public Clasificacion(String nombre) {
+		super();
+		this.nombre = nombre;
+		this.participantes =  new ArrayList<>();;
+		this.jornadas =  new ArrayList<>();
+		this.jugadores = new ArrayList<>(actualizarJugadores());
+	}
+	//ACABAR METODO
+	public void mostrarJugadoresPorGol(){
+		actualizarJugadores();
+		List<Jugador> jugadoresOrdenados = jugadores;
+		jugadoresOrdenados.sort((j1,j2) -> j1.compareTo(j2));
+		for (Jugador jugador : jugadoresOrdenados) {
+			System.out.println(jugador ); //+ buscarEquipoJugador(jugador).getNombre()
+		}
+	}
+	
+	/*
+	 * Devuelve una lista de los todos jugadores de la liga 
+	 */
+	private List<Jugador> actualizarJugadores() {
+		List<Jugador> players = new ArrayList<>();
+		for (Equipo equipo : participantes) {
+			for (Entry<Jugador, Integer> entry : equipo.getGoles().entrySet()) {
+				players.add( entry.getKey());
+			}
+		}
+		return players;
+	}
+	
+	private Equipo buscarEquipoJugador(Jugador jugador) {
+		for (Equipo equipo2: participantes) {
+			equipo2.getGoles().containsKey(jugador);
+			return equipo2;
+		}
+		return null;
+	}
+	/*
+	public void ordenarJugadoresPorGol(Equipo equipo) {
+		for (Entry<Jugador, Integer> entry : equipo.getGoles().entrySet()) {
+			List<Entry> ordenados = Arrays.asList(entry)
+		}
+	}*/
+
+	public void agregarPartido(Partido partido) {
+		 jornadas.add(partido);
+	}
+	
+	public void mostrarTablaJornadas() {
+		
+		for (Partido jornada : jornadasOrdenados()) {
+			System.out.println(jornada.toString());
+		}
+	}
+	
+	private List<Partido> jornadasOrdenados(){
+		List<Partido> ret = jornadas;
+		ret.sort((p1,p2) -> p1.compareTo(p2));
+		return ret;
+	}
+	
+	public void agregarParticipantes(Equipo equipo) {
+		participantes.add(equipo);
+	}
+	public void mostrarTablaClasificacion() {
+		System.out.println("\t" + "  PJ    PG    PE    PP    GF    PT ");
+		for (Equipo equipo : equiposOrdenados()) {
+			System.out.println(equipo.toString());
+		}
+		
+	}
+	
+	private List<Equipo> equiposOrdenados(){
+		List<Equipo> ret = participantes;
+		ret.sort((p1,p2) -> p1.compareTo(p2));
+		return ret;
+	}
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+}

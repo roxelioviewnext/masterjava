@@ -1,0 +1,19 @@
+package com.cafetera.application;
+
+import java.util.Scanner;
+
+import com.cafetera.cafeteria.Cafetera;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+		Cafetera cafetera = new Cafetera();
+		cafetera.toString();
+		
+		cafetera.agregarCafe(200);
+		cafetera.toString();
+		
+		cafetera.servirTaza(50);
+		
+	}
+}

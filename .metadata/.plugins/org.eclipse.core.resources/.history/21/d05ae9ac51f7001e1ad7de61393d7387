@@ -1,0 +1,15 @@
+package com.cafetera.application;
+
+import java.util.Scanner;
+
+import com.cafetera.cafeteria.Cafetera;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+		Cafetera cafetera = new Cafetera();
+		System.out.println("Capacidad Actual: " + cafetera.getCapacidadActual()+ "  Capacidad Maxima: " + cafetera.getCapacidadMaxima());
+		
+		cafetera.agregarCafe(200);
+	}
+}

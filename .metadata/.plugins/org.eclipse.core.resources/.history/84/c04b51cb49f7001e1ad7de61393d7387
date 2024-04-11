@@ -1,0 +1,20 @@
+package com.cuenta.application;
+
+import java.util.Scanner;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+		Double cantidad;
+		do {
+			
+		
+		try {
+			cantidad = scan.nextDouble();
+		}catch (Exception e){
+			System.out.println("No has introducido la cantidad correctamente");
+		}
+		}while (cantidad != null);
+		
+	}
+}

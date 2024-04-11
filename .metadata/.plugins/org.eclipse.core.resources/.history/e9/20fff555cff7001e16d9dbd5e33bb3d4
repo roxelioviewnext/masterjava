@@ -1,0 +1,48 @@
+package com.tienda.almacen;
+
+public class Producto {
+	protected int id;
+	protected String modelo;
+	protected double precio;
+	protected int cantidadAlmacen;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	public int getCantidadAlmacen() {
+		return cantidadAlmacen;
+	}
+	public void setCantidadAlmacen(int cantidadAlmacen) {
+		this.cantidadAlmacen = cantidadAlmacen;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder("Producto: " + id + "\n");
+		builder.append("Modelo: ");
+		builder.append(modelo);
+		builder.append(" Precio: ");
+		builder.append(precio);
+		builder.append(" Cantidad en el almacen: ");
+		builder.append(cantidadAlmacen);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
+}

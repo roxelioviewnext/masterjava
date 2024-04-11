@@ -1,0 +1,31 @@
+package com.cuenta.application;
+
+import java.util.Scanner;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Double cantidad = null;
+		int opcion = 0;
+		
+		do {
+			try {
+				System.out.println("Por favor, introduce la cantidad");
+				cantidad = scan.nextDouble();
+			} catch (Exception e) {
+				System.out.println("No has introducido la cantidad correctamente");
+			}
+		} while (opcion < 1 || opcion > 2);
+		
+		do {
+			try {
+				System.out.println("Por favor, introduce la cantidad");
+				cantidad = scan.nextDouble();
+			} catch (Exception e) {
+				System.out.println("No has introducido la cantidad correctamente");
+			}
+		} while (cantidad != null);
+
+	}
+}

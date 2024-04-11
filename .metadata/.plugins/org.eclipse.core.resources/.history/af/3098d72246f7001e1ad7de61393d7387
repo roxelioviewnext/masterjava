@@ -1,0 +1,18 @@
+package com.cuenta.banco;
+
+import java.math.BigDecimal;
+
+public class Cuenta {
+	private String titular;
+	private BigDecimal cantidad;
+	
+	public Cuenta(String titular) {
+		this.titular = titular;
+	}
+	
+	public Cuenta(String titular, BigDecimal cantidad) {
+		this(titular);
+		this.cantidad = cantidad;
+	}
+	
+}

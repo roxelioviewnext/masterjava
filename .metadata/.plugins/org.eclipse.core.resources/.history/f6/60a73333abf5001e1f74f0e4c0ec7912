@@ -1,0 +1,8 @@
+package com.ejercicio.liga;
+
+public class Jugador {
+	private String nombre;
+	private int numero;
+	private int edad;
+	private Posicion posicion;
+}

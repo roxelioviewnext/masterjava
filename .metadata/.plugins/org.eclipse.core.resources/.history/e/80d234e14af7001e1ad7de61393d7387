@@ -1,0 +1,50 @@
+package com.cuenta.application;
+
+import java.util.Scanner;
+
+import com.cuenta.banco.Cuenta;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Double cantidad = null;
+		int opcion = 0;
+		String titular;
+		Cuenta nuevaCuenta;
+		System.out.println("Introduce el nombre dil titular");
+		do {
+			titular = scan.nextLine();
+		} while (titular.isBlank());
+		nuevaCuenta = new Cuenta(titular);
+		
+		do {
+			try {
+				System.out.println("1- Ingresar");
+				System.out.println("2- Retirar");
+				System.out.println("Por favor, introduce la opcion");
+				opcion = scan.nextInt();
+			} catch (Exception e) {
+				System.out.println("No has introducido la opcion correctamente");
+			}
+		} while (opcion < 1 || opcion > 2);
+
+		do {
+			try {
+				System.out.println("Por favor, introduce la cantidad");
+				cantidad = scan.nextDouble();
+			} catch (Exception e) {
+				System.out.println("No has introducido la cantidad correctamente");
+			}
+		} while (cantidad != null);
+
+		switch (opcion) {
+		case 1 -> {
+			
+		}
+		case 2 -> {
+
+		}
+		}
+	}
+}

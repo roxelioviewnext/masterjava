@@ -1,0 +1,107 @@
+package com.ejercicio.main;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Scanner;
+
+import com.ejercicio.liga.Clasificacion;
+import com.ejercicio.liga.Equipo;
+import com.ejercicio.liga.Jugador;
+import com.ejercicio.liga.Partido;
+import com.ejercicio.utils.Posicion;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+		Clasificacion liga = new Clasificacion("LA LIGA");
+		agregarDatosEjemplo(liga);
+				
+		int opcion;
+		mostrarOpcionesUsuario();
+		opcion = leeOpcion();
+		switch (opcion){ 
+		case 1  -> {
+			System.out.println("HAS ENTRADO EN MODO ESPECTADOR");
+			mostrarOpcionesEspectador();
+			opcion = leeOpcion();
+			switch (opcion) {
+			case 1 -> liga.mostrarJugadoresPorGol();
+			case 2 -> liga.mostrarTablaClasificacion();
+			case 3 -> liga.mostrarTablaJornadas();
+			}
+		}
+		case 2  -> {
+			System.out.println("HAS ENTRADO EN MODO ADMINISTRADOR");
+			opcion = leeOpcion();
+		}
+		default -> System.exit(-1);
+		}
+		
+	}
+	/*
+	 * Lee la proxima linea insertada por consola, 
+	 * si la linea es un numero devuelve ese numero,
+	 * sino salta un error
+	 */
+	private static int leeOpcion() {
+		int ret = -1;
+		try {
+			System.out.println("Introduce tu opcion porfavor");
+			ret =Integer.parseInt(scan.nextLine());
+		}catch (Exception e) {
+			System.out.println("Error leyendo el numero");
+		}
+		return ret;
+		
+	}
+	
+	private static void mostrarOpcionesUsuario() {
+		System.out.println("1 - MODO ESPECTADOR");
+		System.out.println("2 - MODO ADMINISTRADOR");
+	}
+	
+	private static void mostrarOpcionesEspectador() {
+		System.out.println("1 - MOSTRAR JUGADORES DE CADA EQUIPO POR GOL");
+		System.out.println("2 - MOSTRAR CLASIFICACION");
+		System.out.println("3 - MOSTAR CALENDARIO DE JORNADAS");
+	}
+	
+	/*
+	 * Metodo para poner ejemplos de prueba
+	 */
+	private static void agregarDatosEjemplo(Clasificacion liga) {
+		Jugador j1 = new Jugador("Pepe", 20, Posicion.PORTERO);
+		Jugador j2 = new Jugador("Lucas", 24, Posicion.CENTRAL);
+		Jugador j3 = new Jugador("Jorge", 20, Posicion.DELANTERO);
+		
+		j1.setGolesEquipoActual(5);
+		j2.setGolesEquipoActual(7);
+		j3.setGolesEquipoActual(10);
+		
+		Equipo e1 = new Equipo("Mallorca", "Madrid ST");
+		Equipo e2 = new Equipo("Madrid", "Madrid ST");
+		Equipo e3 = new Equipo("Celta", "Madrid ST");
+		
+		e2.setPuntos(10);
+		e1.setPuntos(15);
+		e3.setPuntos(8);
+		
+		e2.ficharJugador(j1);
+		e1.ficharJugador(j2);
+		e3.ficharJugador(j3);
+		
+		liga.agregarParticipantes(e1);
+		liga.agregarParticipantes(e1);
+		liga.agregarParticipantes(e3);
+		
+		
+		
+		Partido p1 = new Partido(e2, e3, LocalDate.of(2024, Month.APRIL, 14));
+		Partido p2 = new Partido(e2, e1, LocalDate.of(2024, Month.FEBRUARY, 25));
+		Partido p3 = new Partido(e1, e3, LocalDate.of(2024, Month.MARCH, 31));
+		
+		liga.agregarPartido(p1);
+		liga.agregarPartido(p2);
+		liga.agregarPartido(p3);
+	}
+}

@@ -1,0 +1,110 @@
+package com.ejercicio.liga;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
+
+public class Clasificacion {
+	private String nombre;
+	
+	private List<Equipo> equipos;
+
+	private List<Jugador> jugadores;
+	
+	private List<Partido> jornadas;
+	
+	public Clasificacion(String nombre) {
+		super();
+		this.nombre = nombre;
+		this.equipos =  new ArrayList<>();;
+		this.jornadas =  new ArrayList<>();
+		this.jugadores = new ArrayList<>();
+	}
+	//ACABAR METODO
+	public void mostrarJugadoresPorGol(){
+		jugadores = actualizarJugadores();
+		List<Jugador> jugadoresOrdenados = jugadores;
+		jugadoresOrdenados.sort((j1,j2) -> j1.compareTo(j2));
+		for (Jugador jugador : jugadoresOrdenados) {
+			String nombreEquipo = "FA";
+			nombreEquipo = buscarEquipoJugador(jugador).getNombre();
+			System.out.println(jugador +" Equipo: " +nombreEquipo); 
+		}
+	}
+	
+	/*
+	 * Devuelve una lista de los todos jugadores de la liga 
+	 */
+	private List<Jugador> actualizarJugadores() {
+		List<Jugador> players = new ArrayList<>();
+		for (Equipo equipo : equipos) {
+			players.addAll(equipo.getJugadores());
+		}
+		return players;
+	}
+	
+	/*
+	 * Devuelve el equipo del jugador
+	 * Si el jugador no tiene equipo devuelve null
+	 */
+	private Equipo buscarEquipoJugador(Jugador jugador) {
+		for (Equipo equipo: equipos) {
+			equipo.getJugadores().contains(jugador);
+			return equipo;
+		}
+		return null;
+	}
+
+	public void agregarPartido(Partido partido) {
+		if(!jornadas.contains(partido)) {
+			jornadas.add(partido);	
+		}else {
+			System.out.println("Este partido ya está registrado");
+		}
+		
+	}
+	
+	public void mostrarTablaJornadas() {
+		for (Partido jornada : jornadasOrdenados()) {
+			System.out.println(jornada.toString());
+		}
+	}
+	
+	/*
+	 * Devuelve una lista de partidos ordenados por fecha
+	 */
+	private List<Partido> jornadasOrdenados(){
+		List<Partido> ret = jornadas;
+		ret.sort((p1,p2) -> p1.compareTo(p2));
+		return ret;
+	}
+	
+	public void agregarEquipos(Equipo equipo) {
+		if(!equipos.contains(equipo)) {
+			equipos.add(equipo);	
+		}else System.out.println("Este equipo ya esta refistrado");
+		
+	}
+	public void mostrarTablaClasificacion() {
+		System.out.println("\t" + "  PJ    PG    PE    PP    GF    PT ");
+		for (Equipo equipo : equiposOrdenados()) {
+			System.out.println(equipo.toString());
+		}
+		
+	}
+	
+	private List<Equipo> equiposOrdenados(){
+		List<Equipo> ret = equipos;
+		ret.sort((p1,p2) -> p1.compareTo(p2));
+		return ret;
+	}
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+}

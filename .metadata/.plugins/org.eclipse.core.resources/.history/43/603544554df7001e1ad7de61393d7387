@@ -1,0 +1,18 @@
+package com.cafetera.cafeteria;
+
+public class Cafetera {
+	private int capacidadMaxima;
+	private int capacidadActual;
+	
+	public Cafetera() {
+		this.capacidadMaxima = 1000;
+		this.capacidadActual = 0;
+	}
+	
+	public Cafetera(int capacidadMaxima) {
+		this.capacidadMaxima = capacidadMaxima;
+		this.capacidadActual = this.capacidadMaxima;
+	}
+	
+	
+}

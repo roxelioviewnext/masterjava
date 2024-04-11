@@ -1,0 +1,8 @@
+package com.tienda.almacen;
+
+public class Ordenador extends Producto {
+	private String procesador;
+	private int cantidadMemoria;
+	private int capacidadDisco;
+	
+}

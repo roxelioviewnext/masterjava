@@ -1,0 +1,15 @@
+package com.tienda.almacen;
+
+public class Telefono extends Producto{
+	private String operador;
+
+	public String getOperador() {
+		return operador;
+	}
+
+	public void setOperador(String operador) {
+		this.operador = operador;
+	}
+	
+	
+}
