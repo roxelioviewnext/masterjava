@@ -5,15 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import com.proyecto.model.Flauta;
-
 import com.proyecto.model.Instrumento;
 import com.proyecto.model.Tambor;
 
 public class Orquesta {
 	private final static Logger LOGGER = Logger.getLogger("MyLog");
-	public static final String ANSI_WHITE = "\u001B[37m";
 	
+	/** 
+	 * Variables para cambiar el color del texto imprimido por pantalla
+	 */
+	public static final String ANSI_WHITE = "\u001B[37m";
 	public static final String ANSI_GREEN = "\u001B[32m";
 	public static final String ANSI_RED = "\u001B[31m";
 	
