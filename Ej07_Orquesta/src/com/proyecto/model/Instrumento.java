@@ -1,5 +1,11 @@
 package com.proyecto.model;
 
+/**
+ * 
+ * @author Roxelio Vello
+ * @version 1.0
+ *
+ */
 public abstract class Instrumento{
 	protected String nombreInstrumento;
 	protected String tipo;

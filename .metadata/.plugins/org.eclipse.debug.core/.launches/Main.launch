@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/PensandoEnObjetos/src/com/ejercicio/main/Main.java"/>
+        <listEntry value="/Ej01_PensandoEnObjetos/src/com/ejercicio/main/Main.java"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
@@ -9,5 +9,5 @@
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.ejercicio.main.Main"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="PensandoEnObjetos"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="PensandoEnObjetos"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Ej01_PensandoEnObjetos"/>
 </launchConfiguration>

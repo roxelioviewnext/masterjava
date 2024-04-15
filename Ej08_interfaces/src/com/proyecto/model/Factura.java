@@ -7,7 +7,7 @@ public class Factura implements Imprimible {
 	private int codigoCliente;
 	
 	
-	public Factura(int nFactura, int nLineas, int codigoCliente) {
+	public Factura(int nFactura, int codigoCliente) {
 		super();
 		this.nFactura = nFactura;
 		this.codigoCliente = codigoCliente;

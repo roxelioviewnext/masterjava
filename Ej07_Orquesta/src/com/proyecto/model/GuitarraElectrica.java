@@ -1,5 +1,11 @@
 package com.proyecto.model;
 
+/**
+ * 
+ * @author Roxelio Vello
+ * @version 1.0
+ *
+ */
 public class GuitarraElectrica extends Guitarra {
 	
 	private double potencia;

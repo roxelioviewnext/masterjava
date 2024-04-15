@@ -1,12 +1,18 @@
 package com.proyecto.model;
 
+/**
+ * 
+ * @author Roxelio Vello
+ * @version 1.0
+ *
+ */
 public class Tambor extends Instrumento{
 
-	private String tamaño;
+	private String tamanho;
 	
-	public Tambor(String nombreInstrumento, String tipo, String tamaño) {
+	public Tambor(String nombreInstrumento, String tipo, String tamanho) {
 		super(nombreInstrumento, tipo);
-		this.tamaño = tamaño;
+		this.tamanho = tamanho;
 	}
 	
 	public String aporrear() {
@@ -17,7 +23,7 @@ public class Tambor extends Instrumento{
 	public String toString() {
 		StringBuilder builder = new StringBuilder(super.toString());
 		builder.append("\tTamaño: ");
-		builder.append(tamaño);
+		builder.append(tamanho);
 
 		return builder.toString();
 	}

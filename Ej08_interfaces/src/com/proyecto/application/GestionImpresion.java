@@ -1,20 +1,25 @@
 package com.proyecto.application;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.proyecto.model.Factura;
 import com.proyecto.model.Pagina;
+import com.proyecto.service.Imprimible;
 
 public class GestionImpresion {
 	public static void main(String[] args) {
-		 Pagina pagina = new Pagina(100, 20);
-		 Factura factura = new Factura(100, 20, 1);
+		 Imprimible pagina = new Pagina(100, 20);
+		 Imprimible factura = new Factura(140, 1);
 		 
-		 //mostrar informes de las paginas
-		 pagina.informeCorto();
-		 pagina.informeLargo();
+		 List<Imprimible> informes = new ArrayList<>();
+		 informes.add(factura);
+		 informes.add(pagina);
 		 
-		 //mostrar informes de las facturas
-		 factura.informeCorto();
-		 factura.informeLargo();
+		 for (Imprimible imprimible : informes) {
+			imprimible.informeCorto();
+			imprimible.informeLargo();
+		}
 		
 	}
 }

@@ -1,8 +1,12 @@
 package com.proyecto.model;
 
+/**
+ * 
+ * @author Roxelio Vello
+ * @version 1.0
+ *
+ */
 public abstract class Guitarra extends Instrumento {
-	
-
 	protected int numeroCuerdas;
 	
 	public Guitarra(String nombreInstrumento, String tipo, int numeroCuerdaas) {
