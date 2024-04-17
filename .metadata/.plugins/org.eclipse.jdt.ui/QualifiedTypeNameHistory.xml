@@ -32,4 +32,11 @@
     <fullyQualifiedTypeName name="com.tienda.almacen.Telefono"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="javax.management.DefaultLoaderRepository"/>
+    <fullyQualifiedTypeName name="com.proyecto.herencias.Reproductor"/>
+    <fullyQualifiedTypeName name="com.proyecto.herencias.Electrodomestico"/>
+    <fullyQualifiedTypeName name="com.proyecto.varargs.Media"/>
+    <fullyQualifiedTypeName name="com.proyectos.electrodomesticos.utils.Color"/>
+    <fullyQualifiedTypeName name="com.proyectos.electrodomesticos.utils.Consumo"/>
+    <fullyQualifiedTypeName name="com.proyectos.electrodomesticos.model.Electrodomestico"/>
 </qualifiedTypeNameHistroy>
