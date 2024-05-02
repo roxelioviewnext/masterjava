@@ -34,7 +34,7 @@ public abstract class Vehiculo implements Conducible{
 		
 		for (Color colores : Color.values()) {
 			if (color.equalsIgnoreCase(colores.getNombre())) {
-				setColor(colores);
+				colorFinal = colores;
 			}
 		}
 		return colorFinal;
@@ -68,4 +68,23 @@ public abstract class Vehiculo implements Conducible{
 	public void setColor(Color color) {
 		this.color = color;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Vehiculo [matricula=");
+		builder.append(matricula);
+		builder.append(", color=");
+		builder.append(color);
+		builder.append(", numeroRuedas=");
+		builder.append(numeroRuedas);
+		builder.append(", velocidadMaxima=");
+		builder.append(velocidadMaxima);
+		builder.append(", peso=");
+		builder.append(peso);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 }

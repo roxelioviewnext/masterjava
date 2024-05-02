@@ -1,5 +1,8 @@
 package com.proyectos.electrodomesticos.model;
 
+import com.proyectos.electrodomesticos.utils.Color;
+import com.proyectos.electrodomesticos.utils.Consumo;
+
 public class Lavadora extends Electrodomestico{
 	private static final double CARGA_DEFAULT= 5D;
 	private double carga = CARGA_DEFAULT;
@@ -11,7 +14,7 @@ public class Lavadora extends Electrodomestico{
 		super(precio, peso);
 	}
 
-	public Lavadora(double carga, double precio, double peso, String color, char consumoElectrico) {
+	public Lavadora(double carga, double precio, double peso, Color color, Consumo consumoElectrico) {
 		super(precio, peso, color, consumoElectrico);
 		this.carga = carga;
 	}

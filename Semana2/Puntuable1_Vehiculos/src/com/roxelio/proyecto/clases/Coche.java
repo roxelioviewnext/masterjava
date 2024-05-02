@@ -30,6 +30,7 @@ public final class Coche extends Vehiculo {
 	public void arrancar() {
 		if (!encendido) {
 			encendido = true;
+			System.out.println("El coche se ha encendido");
 		} else {
 			System.out.println("El coche ya esta encendido");
 		}
@@ -39,6 +40,7 @@ public final class Coche extends Vehiculo {
 	public void parar() {
 		if (encendido) {
 			encendido = false;
+			System.out.println("El coche se ha parado");
 		} else {
 			System.out.println("El coche ya esta parado");
 		}
@@ -47,8 +49,8 @@ public final class Coche extends Vehiculo {
 	@Override
 	public void avanzar(double metros) {
 		if (encendido) {
-			Recorrido recorridos = new Recorrido(metros, velocidadMaxima);
-			this.recorridos.add(recorridos);
+			Recorrido recorrido = new Recorrido(metros, velocidadMaxima);
+			this.recorridos.add(recorrido);
 			parar();
 		} else {
 			System.out.println("No puedes moverte porque el coche no esta encendido");
@@ -58,8 +60,8 @@ public final class Coche extends Vehiculo {
 	@Override
 	public void retroceder(double metros) {
 		if (encendido) {
-			Recorrido recorridos = new Recorrido(-metros, velocidadMaxima);
-			this.recorridos.add(recorridos);
+			Recorrido recorrido = new Recorrido(-metros, velocidadMaxima);
+			this.recorridos.add(recorrido);
 			parar();
 		} else {
 			System.out.println("No puedes retrodecer porque el coche no esta encendido");
@@ -72,7 +74,8 @@ public final class Coche extends Vehiculo {
 	 */
 	@Override
 	protected double velocidadMaxima(double peso) {
-		return peso * 0.2;
+		double velocidad = peso * 0.2;
+		return velocidad;
 	}
 
 	@Override
@@ -86,8 +89,23 @@ public final class Coche extends Vehiculo {
 
 	@Override
 	public String toString() {
-		return "Coche [numeroRuedas= " + super.numeroRuedas + ", encendido= " + encendido
-				+ ", distancia total recorrida= " + obtenerDistanciaRecorrida() + "km ]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Coche [encendido=");
+		builder.append(encendido);
+		builder.append(", matricula=");
+		builder.append(matricula);
+		builder.append(", color=");
+		builder.append(color);
+		builder.append(", numeroRuedas=");
+		builder.append(numeroRuedas);
+		builder.append(", velocidadMaxima=");
+		builder.append(velocidadMaxima);
+		builder.append(", peso=");
+		builder.append(peso);
+		builder.append("]");
+		return builder.toString();
 	}
+
+	
 
 }

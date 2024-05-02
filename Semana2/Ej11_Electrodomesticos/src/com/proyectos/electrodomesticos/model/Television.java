@@ -1,5 +1,8 @@
 package com.proyectos.electrodomesticos.model;
 
+import com.proyectos.electrodomesticos.utils.Color;
+import com.proyectos.electrodomesticos.utils.Consumo;
+
 public class Television extends Electrodomestico{
 	private boolean sintonizarTdt;
 	private double resolucion;
@@ -13,7 +16,7 @@ public class Television extends Electrodomestico{
 	}
 
 	public Television(boolean sintonizarTdt, double resolucion,double precio, double peso,
-			String color, char consumoElectrico) {
+			Color color, Consumo consumoElectrico) {
 		super(precio, peso, color, consumoElectrico);
 		this.sintonizarTdt = sintonizarTdt;
 		this.resolucion = resolucion;

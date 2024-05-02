@@ -1,8 +1,12 @@
 package com.proyectos.electrodomesticos.principal;
 
+import javax.swing.JOptionPane;
+
 import com.proyectos.electrodomesticos.model.Electrodomestico;
 import com.proyectos.electrodomesticos.model.Lavadora;
 import com.proyectos.electrodomesticos.model.Television;
+import com.proyectos.electrodomesticos.utils.Color;
+import com.proyectos.electrodomesticos.utils.Consumo;
 
 public class Principal {
 	public static void main(String[] args) {
@@ -10,7 +14,7 @@ public class Principal {
 		
 		Electrodomestico[] electrodomesticos = new Electrodomestico[NUM];
 		
-		electrodomesticos[0] = new Lavadora(20, 200, 100, "AZUL", 'F');
+		electrodomesticos[0] = new Lavadora(20, 200, 100, Color.AZUL, Consumo.F);
 		electrodomesticos[1] = new Lavadora(100, 20);
 		electrodomesticos[2] = new Lavadora(150, 40);
 		electrodomesticos[3] = new Lavadora(120, 79);
@@ -21,7 +25,7 @@ public class Principal {
 		electrodomesticos[7] = new Television(true, 80);
 		electrodomesticos[8] = new Television(false, 100);
 		electrodomesticos[9] = new Television(false, 15);
-
+		
 		double precioTotLavadoras = 0, precioTotTelevision = 0, precioTotElectrodomesticos = 0;
 		
 		/**
