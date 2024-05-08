@@ -20,7 +20,7 @@ public class ServletFormulario03 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
-		pw.println("<!DOCTYPE.html>");
+		pw.println("<!DOCTYPE html>");
 		pw.println("<html lang =\"es\">");
 		pw.println("<head>");
 		pw.println("<meta charset = \"UTF-8\">");
