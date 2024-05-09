@@ -10,11 +10,15 @@ import com.entrega.model.Seccion;
 
 public class Almacen {
 	
-
+	/*
+	 * Lista para almacenar los productos
+	 */
 	public static List<Producto> productos = new ArrayList<Producto>(List.of(
 			new Producto(Seccion.CARPINTERIA, "Clavo", 300, 100),
-			new Producto(Seccion.LIMPIEZA, "Frega suelos", 20, 19), new Producto(Seccion.JARDINERIA, "Pala", 220, 10),
-			new Producto(Seccion.JARDINERIA, "Planta", 2, 30), new Producto(Seccion.INFORMATICA, "Ordenador", 120, 3),
+			new Producto(Seccion.LIMPIEZA, "Frega suelos", 20, 19),
+			new Producto(Seccion.JARDINERIA, "Pala", 220, 10),
+			new Producto(Seccion.JARDINERIA, "Planta", 2, 30),
+			new Producto(Seccion.INFORMATICA, "Ordenador", 120, 3),
 			new Producto(Seccion.CARPINTERIA, "Martillo", 600, 30)));
 	
 	/*
@@ -25,7 +29,10 @@ public class Almacen {
 		return temp.isEmpty() ? productos : temp;
 	}
 	
-	public static List<Producto> productosFiltrados = filtrarSeccion("vvvv");
+	/*
+	 * Esta es la list que se muestra siempre en el formulario principal
+	 */
+	public static List<Producto> productosFiltrados = filtrarSeccion("default");
 	
 	
 
@@ -53,21 +60,6 @@ public class Almacen {
 		if (productos.contains(producto)) {
 			productos.remove(producto);
 		}
-	}
-
-	public List<Producto> listarProductos() {
-		return productos;
-	}
-
-	public List<Producto> listaProductosBySeccion(String seccion) {
-		List<Producto> lista = new ArrayList<>();
-		for (Producto producto : productos) {
-			if (producto.getSeccion().name().equalsIgnoreCase(seccion)) {
-				lista.add(producto);
-			}
-		}
-
-		return lista;
 	}
 
 	/*

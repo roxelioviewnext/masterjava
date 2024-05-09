@@ -7,8 +7,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-3">
-<title>Insert title here</title>
+	<meta charset="ISO-8859-3">
+	<title>Insertar producto</title>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<form action="MiServlet" method="post">
@@ -18,7 +19,7 @@
 		<br>
 		
 		<label for="precio">Precio:</label>
-		<input type="number" id="precio" name="precio" step="0.01" required>
+		<input type="number" id="precio" name="precio" min="0" step="0.01" required>
 		<br> 
 		
 		<label for="stock">Stock:</label> 
@@ -26,15 +27,14 @@
 		<br> 
 		
 		<label for="seccion">Sección:</label> 
-		
 		<select id="seccion" name="seccion">
-			<c:forEach items="${Seccion.secciones}" end="${Seccion.secciones.size()}" var="seccion">
+			<c:forEach items="${Seccion.secciones}" var="seccion">
 				<option value="${seccion.name()}">${seccion.name().toLowerCase()}</option>
 			</c:forEach>
 		</select> 
 		<br>
 		
-		<input type="submit" value="Insertar">
+		<button class="add-btn" type="submit">Insertar</button>
 	</form>
 </body>
 </html>

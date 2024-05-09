@@ -15,19 +15,17 @@ import com.entrega.service.Almacen;
 public class FiltrarProductosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	String seccion = request.getParameter("seccion");
-		Almacen.productosFiltrados = Almacen.filtrarSeccion(seccion);
-		
-		request.getRequestDispatcher("/formulario.jsp").forward(request, response);
-
-    }
     
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Metodo doPost
+	 * Modifica la lista que se muestra en init.jsp dependiendo de la seccion que se le pase por parametro
+	 * 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		String seccion = request.getParameter("seccion");
+		Almacen.productosFiltrados = Almacen.filtrarSeccion(seccion);
+		
+		request.getRequestDispatcher("/init.jsp").forward(request, response);
 	}
 
 }

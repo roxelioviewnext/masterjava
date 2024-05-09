@@ -19,8 +19,11 @@ public final class MiServlet extends HttpServlet {
 
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * Metodo doPost
+	 * Recoge los parametros(seccion, nombre, precio ,stock), crea un producto con esos parametros 
+	 * y lo agrega a la lista de productos
+	 * Redirige a init.jsp
+	 * 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,7 +35,7 @@ public final class MiServlet extends HttpServlet {
 		if (producto != null) {
 			Almacen.agregarProducto(producto);
 		}
-		request.getRequestDispatcher("/formulario.jsp").forward(request, response);
+		request.getRequestDispatcher("/init.jsp").forward(request, response);
 	}
 
 }

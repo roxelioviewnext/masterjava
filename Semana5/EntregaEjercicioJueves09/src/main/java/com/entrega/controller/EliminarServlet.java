@@ -21,7 +21,9 @@ public class EliminarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Metodo doPost
+	 * Recoge el el parametro idEliminar del producto, busca en la clase Almacen un producto con ese id y lo elimina
+	 * Rerige al servlet FiltrarProductosServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int productoId = Integer.parseInt(request.getParameter("idEliminar"));
