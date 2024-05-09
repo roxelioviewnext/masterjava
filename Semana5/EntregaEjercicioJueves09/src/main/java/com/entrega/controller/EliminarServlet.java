@@ -31,7 +31,7 @@ public class EliminarServlet extends HttpServlet {
 		if(producto != null) {
 			Almacen.eliminarProducto(producto);
 		}
-		
+
 		request.getRequestDispatcher("FiltrarProductosServlet").forward(request, response);
 		
 	}

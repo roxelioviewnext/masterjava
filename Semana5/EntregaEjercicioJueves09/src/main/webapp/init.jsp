@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <title>Productos</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/botones.css">
 </head>
 <body>	
 	<form action="FiltrarProductosServlet" method="post">
@@ -16,10 +17,10 @@
         <select name="seccion" id="seccion">
          	<option value="">Todas las secciones</option>
             <c:forEach items="${Seccion.secciones}" var="seccion">
-                <option value="${seccion.name().toLowerCase()}">${seccion.name().toLowerCase()}</option>
+                	<option value="${seccion.name().toLowerCase()}">${seccion.name().toLowerCase()}</option>
             </c:forEach>
         </select>
-        <button type="submit">Filtrar</button>
+        <button class="insert-btn" type="submit">Filtrar</button>
     </form>
     <table border="1">
         <thead>

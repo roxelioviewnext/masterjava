@@ -1,0 +1,16 @@
+@charset "UTF-8";
+label{
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+form{
+	position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+}
+button{
+	align-self: center;
+}
+

@@ -47,7 +47,7 @@ public class EditarServlet extends HttpServlet {
 			Almacen.editarProducto(producto);
 		}
 		
-		request.getRequestDispatcher("/init.jsp").forward(request, response);
+		response.sendRedirect("init.jsp");
 	}
 
 }

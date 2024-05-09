@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import com.entrega.service.Almacen;
@@ -15,7 +17,6 @@ import com.entrega.service.Almacen;
 public class FiltrarProductosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-    
 	/**
 	 * Metodo doPost
 	 * Modifica la lista que se muestra en init.jsp dependiendo de la seccion que se le pase por parametro
@@ -25,7 +26,7 @@ public class FiltrarProductosServlet extends HttpServlet {
 		String seccion = request.getParameter("seccion");
 		Almacen.productosFiltrados = Almacen.filtrarSeccion(seccion);
 		
-		request.getRequestDispatcher("/init.jsp").forward(request, response);
+		response.sendRedirect("init.jsp");
 	}
 
 }

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+button {
+	padding: 5px 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.add-btn {
+	background-color: #008CBA;
+}
+
+.add-btn:hover {
+	background-color: #005f78;
+}
+
+
+.insert-btn{
+	background-color: #FF8C00;	
+}
+
+.insert-btn:hover {
+	background-color: #FF8000;
+}

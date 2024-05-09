@@ -14,7 +14,7 @@ import com.entrega.service.Almacen;
 /**
  * Servlet implementation class MiServlet
  */
-public final class MiServlet extends HttpServlet {
+public final class InsertarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -35,7 +35,7 @@ public final class MiServlet extends HttpServlet {
 		if (producto != null) {
 			Almacen.agregarProducto(producto);
 		}
-		request.getRequestDispatcher("/init.jsp").forward(request, response);
+		response.sendRedirect("init.jsp");
 	}
 
 }

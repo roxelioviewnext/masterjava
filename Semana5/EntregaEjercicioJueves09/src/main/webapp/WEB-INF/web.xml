@@ -2,13 +2,13 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
   <servlet>
     <description></description>
-    <display-name>MiServlet</display-name>
-    <servlet-name>MiServlet</servlet-name>
-    <servlet-class>com.entrega.controller.MiServlet</servlet-class>
+    <display-name>InsertarServlet</display-name>
+    <servlet-name>InsertarServlet</servlet-name>
+    <servlet-class>com.entrega.controller.InsertarServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>MiServlet</servlet-name>
-    <url-pattern>/MiServlet</url-pattern>
+    <servlet-name>InsertarServlet</servlet-name>
+    <url-pattern>/InsertarServlet</url-pattern>
   </servlet-mapping>
   <display-name>EntregaEjercicioJueves09</display-name>
   <welcome-file-list>
