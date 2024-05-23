@@ -1,0 +1,15 @@
+RECURSO: Libro
+
+Vamos a exponer un CRUD de Libro
+
+GET --> Recuperar un Libro
+POST --> Insertar un Libro
+PUT --> Actualizar un Libro
+DELETE --> Eliminar un Libro
+
+
+https://localhost:8080/libros				GET: expone todos los libros
+https://localhost:8080/libros/{isbn}		GET: recupera el libro con ese isbn
+https://localhost:8080/libros				POST: da de alta un libro con los datos del body de la peticion
+https://localhost:8080/libros				PUT: actualiza un libro
+https://localhost:8080/libros/{isbn}		DELETE: elimina el libro con ese isbn  

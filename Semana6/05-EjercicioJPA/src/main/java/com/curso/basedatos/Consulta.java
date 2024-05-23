@@ -22,6 +22,12 @@ public class Consulta {
 		return empleado;
 	}
 	
+	public Departamento encontrarDepartamento(int id) {
+		em = emf.createEntityManager();
+		Departamento departamento = em.find(Departamento.class, id);
+		return departamento;
+	}
+	
 	public List<Departamento> buscarTodosDepartamentos() {
 		em = emf.createEntityManager();
 
@@ -47,6 +53,7 @@ public class Consulta {
 
 		return departamento.getResultList();
 	}
+	
 	
 	/*
 	 * Recibe por parametros dos empleados y devuelve el empleado con mas tiempo en la empresa

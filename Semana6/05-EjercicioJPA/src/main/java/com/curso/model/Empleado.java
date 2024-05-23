@@ -38,6 +38,18 @@ public class Empleado implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public Empleado() {
+	}
+
+	public Empleado(int idEmpleado, String nombre, Date fecha, double sueldo, Departamento departamento) {
+		super();
+		this.idEmpleado = idEmpleado;
+		this.nombre = nombre;
+		this.fecha = fecha;
+		this.sueldo = sueldo;
+		this.departamento = departamento;
+	}
 
 	public int getIdEmpleado() {
 		return idEmpleado;

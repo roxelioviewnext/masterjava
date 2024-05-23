@@ -13,7 +13,8 @@ public class Principal {
 		Consulta consulta = new Consulta();
 		Empleado e1 = consulta.encontrarEmpleado(2);
 		Empleado e2 = consulta.encontrarEmpleado(3);
-
+		
+		
 		// MOSTRAR EL EMPLEADO MAS VETERANO DADOS DOS
 		System.out.println("MOSTRAR EL EMPLEADO MAS VETERANO DADOS DOS");
 		Empleado aux = consulta.buscarEmpleadoVeterano(e1, e2);
