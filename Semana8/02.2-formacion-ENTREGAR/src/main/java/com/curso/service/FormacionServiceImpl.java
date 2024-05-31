@@ -57,7 +57,7 @@ public class FormacionServiceImpl implements FormacionService {
 		Optional<Formacion> formacionOptional = getFormaciones().stream()
 				.filter(f -> f.getNombre().equals(formacion.getNombre())).findAny();
 
-		if (formacionOptional.isPresent()) {
+		if (!formacionOptional.isPresent()) {
 			int duracion = formacion.getAsignaturas() * 10;
 
 			Curso curso = new Curso(formacion.getNombre(), duracion, formacion.getPrecio());
