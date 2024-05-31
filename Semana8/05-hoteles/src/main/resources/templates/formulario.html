@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+</head>
+<body>
+	<table border = "1">
+		<tbody>
+			<tr th:each="hotel : ${hoteles}">
+				<td th:text="${hotel.nombre}"></td>
+				<td th:text="${hotel.localizacion}"></td>
+				<td th:text="${hotel.numHabitaciones}"></td>
+				<td><a th:href="@{/reservar/} + ${hotel.nombre}">Reservar</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

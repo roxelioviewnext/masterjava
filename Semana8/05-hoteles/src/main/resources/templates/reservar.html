@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Reserva de hotel</title>
+</head>
+<body>
+	<h1>HAS RESERVADO ESTE HOTEL</h1>
+	<div>
+		<div>Hotel: <span th:text="${hotel.nombre}"></span></div>
+		<div>Lugar: <span th:text="${hotel.localizacion}"></span></div>
+		<div>Num Habitaciones: <span th:text="${hotel.numHabitaciones}"></span></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lista 2</title>
+</head>
+<body>
+
+	<table border = "1">
+		<tbody>
+			<tr th:each="persona : ${personas}">
+				<td th:text="${persona.nombre}"></td>
+				<td th:text="${persona.apellido}"></td>
+				<td th:text="${persona.edad}"></td>
+			</tr>
+		</tbody>
+	</table>	
+	Imagen guardada<p><img th:src="@{images/foto.png}"></p>
+	Recurso externo<a th:href="@{https://google.com}">Texto enlace 1</a><br>
+	Recurso interno<a th:href="@{/lista}">Texto enlace 2 a fichero html</a>
+
+</body>
+</html>
