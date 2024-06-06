@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Vuelos</title>
+<link th:href="@{/css/mostrar.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+	<a th:href="@{/}">Volver a inicio</a>
+		<h1 th:if="${mostrar}">Lista de Vuelos</h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>ID Vuelo</th>
+					<th>Compañía</th>
+					<th>Fecha de Vuelo</th>
+					<th>Precio</th>
+					<th>Plazas Disponibles</th>
+					<th th:unless="${verVuelo}">Ver Vuelo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="vuelo : ${vuelos}">
+					<td th:text="${vuelo.idVuelo}">
+					<td th:text="${vuelo.companhia}">
+					<td th:text="${vuelo.fechaVuelo}">
+					<td th:text="${vuelo.precio}">
+					<td th:text="${vuelo.plazasDisponibles}">
+					<td th:unless="${verVuelo}"><a th:href="@{/vuelos/} + ${vuelo.idVuelo}">Ver vuelo</a></td>	
+				</tr>
+		</tbody>
+	</table>
+	<div th:unless="${verVuelo}"><a th:href="@{/vuelos}">Ver todos los vuelos</a></div>
+	</div>
+</body>
+</html>

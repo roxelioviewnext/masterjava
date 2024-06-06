@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hacer reserva</title>
+<link th:href="@{/css/form.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="cntainer">
+		<form th:object="${reserva}" th:action="@{/reservas/reservar}"
+			method="post">
+			<div>
+				<label>NombreCliente: </label> <input th:field="*{nombreCliente}"
+					type="text" required>
+			</div>
+			<div>
+				<label>Dni</label> <input th:field="*{dni}" type="text" required>
+			</div>
+			<div>
+				<label>Id Vuelo</label> <select th:field="*{idVuelo}">
+					<option th:each="vuelo : ${vuelosDisponibles}"
+						th:value="${vuelo.idVuelo}" th:text="${vuelo.companhia} + ' plazas restantes: ' + ${vuelo.plazasDisponibles}">
+					</option>
+				</select>
+			</div>
+			<div>
+				<label>Id Hotel</label> 
+				<select th:field="*{idHotel}">
+					<option th:each="hotel : ${hotelesDisponibles}"
+						th:value="${hotel.idHotel}" th:text="${hotel.nombre }">
+					</option>
+				</select>
+			</div>
+			<div>
+				<label>Total de personas</label> <input th:field="*{totPersonas}"
+					type="number" required>
+			</div>
+
+			<div>
+				<a th:href="@{/reservas}"><input type="button" value="Cancelar"></a>
+				<input type="submit" value="Crear reserva">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

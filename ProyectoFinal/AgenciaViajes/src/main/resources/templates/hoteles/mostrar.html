@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hoteles</title>
+<link th:href="@{/css/mostrar.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<a th:href="@{/}">Volver a inicio</a>
+		<h1>Lista de Hoteles</h1>
+		<div th:unless="${verHotel}">
+			<div th:if="${checked}">
+				<input type="checkbox" id="checkbox" name="checkbox" checked><span>Disponibles</span>
+			</div>
+			<div th:unless="${checked}">
+				<input type="checkbox" id="checkbox" name="checkbox"><span>Disponibles</span>
+			</div>
+		</div>
+
+		<table>
+			<thead>
+				<tr>
+					<th>ID Hotel</th>
+					<th>Nombre</th>
+					<th>Categoria</th>
+					<th>Esta Disponible</th>
+					<th th:unless="${verHotel}">Ver Hotel</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="hotel : ${hoteles}">
+					<td th:text="${hotel.idHotel}">
+					<td th:text="${hotel.nombre}">
+					<td th:text="${hotel.categoria}">
+					<td th:text="${hotel.disponible}">
+					<td th:unless="${verHotel}"><a
+						th:href="@{/hoteles/} + ${hotel.nombre}">Ver Hotel</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/hoteles}"><input type="button" value="Ver hoteles"></a>
+	</div>
+	<script src="/js/script.js"></script>
+</body>
+</html>
