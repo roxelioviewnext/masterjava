@@ -56,7 +56,7 @@ class ReservaControllerTests {
 	}
 
 	@Test
-	public void getListTodosLasReservasTest() throws Exception {
+	public void getListTodasLasReservasTest() throws Exception {
 		mockMvc.perform(get("/reserva")).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$", hasSize(1)))
 				.andExpect(jsonPath("$[0].nombreCliente", is("Pepe")));
@@ -64,7 +64,7 @@ class ReservaControllerTests {
 	}
 
 	@Test
-	public void getListTodosLasReservasByNombreTest() throws Exception {
+	public void getListTodasLasReservasByNombreTest() throws Exception {
 		mockMvc.perform(get("/reserva/Pepe")).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$", hasSize(1)))
 				.andExpect(jsonPath("$[0].nombreCliente", is("Pepe")));
@@ -72,7 +72,7 @@ class ReservaControllerTests {
 	}
 
 	@Test
-	public void deleteClienteByIdTest() throws Exception {
+	public void deleteReservaByIdTest() throws Exception {
 		doNothing().when(service).deleteReserva(new Reserva());
 		mockMvc.perform(delete("/reserva").contentType(MediaType.APPLICATION_JSON)
 				.content("{" + "        \"nombreCliente\": \"Juan Pérez\"," + "        \"dni\": \"12345678A\","

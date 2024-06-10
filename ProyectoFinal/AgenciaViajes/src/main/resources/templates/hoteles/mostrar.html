@@ -8,7 +8,7 @@
 <body>
 	<div class="container">
 		<a th:href="@{/}">Volver a inicio</a>
-		<h1>Lista de Hoteles</h1>
+		<h1 th:unless="${verHotel}">Lista de Hoteles</h1>
 		<div th:unless="${verHotel}">
 			<div th:if="${checked}">
 				<input type="checkbox" id="checkbox" name="checkbox" checked><span>Disponibles</span>
@@ -39,7 +39,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<a th:href="@{/hoteles}"><input type="button" value="Ver hoteles"></a>
+		<div th:if="${verHotel}">
+			<a th:href="@{/hoteles}">Ver hoteles</a>
+		</div>
 	</div>
 	<script src="/js/script.js"></script>
 </body>

@@ -32,7 +32,7 @@
 				</tr>
 		</tbody>
 	</table>
-	<div th:unless="${verVuelo}"><a th:href="@{/vuelos}">Ver todos los vuelos</a></div>
+	<div th:if="${verVuelo}"><a th:href="@{/vuelos}">Ver todos los vuelos</a></div>
 	</div>
 </body>
 </html>
